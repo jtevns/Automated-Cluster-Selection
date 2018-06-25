@@ -2,7 +2,7 @@ Automated-Cluster-Selection
 
 run
 ```
-Python AutomatedClusterSelection.py
+Python AutomatedClusterSelection.py points fasta
 ```
 
 requires
