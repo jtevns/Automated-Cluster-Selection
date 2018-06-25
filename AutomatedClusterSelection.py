@@ -17,7 +17,7 @@ def clusterPoints(pointsDF,minSample):
 
 
 #TODO: plotting for orig and clustered data
-def plotClusters(pointsDf,clusters,size,minSample):
+def plotClusters(pointsDf,clusters,minSample):
     palette = sns.color_palette('bright', np.unique(clusters).max() + 1)
     colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in clusters]
     plt.figure(figsize=(20,15))
@@ -84,18 +84,13 @@ def main():
     #read in the points file
     points=pds.read_csv(sys.argv[1],header=None)
     fasta=sys.argv[2]
-    size=sys.argv[3]
     #plotOriginal(points)
     for minSample in [10,15,25,50,75,100]:
-        print("1")
         clusters=clusterPoints(points,minSample)
-        print("2")
         binPrefix="minSample"+str(minSample)
         binList=makeBinList(fasta,clusters,binPrefix)
-        print("3")
         printBinList(binList,minSample)
-        print("4")
-        #plotClusters(points,clusters,size,minSample)
+        plotClusters(points,clusters,minSample)
 
 if __name__ == '__main__':
     main()
