@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import sklearn.cluster as cluster
-import time
 import pandas as pds
 import hdbscan as hdb
 import seaborn as sns
