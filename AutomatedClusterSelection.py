@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 import sklearn.cluster as cluster
 import pandas as pds
 import hdbscan as hdb
@@ -89,7 +88,7 @@ def main():
         binPrefix="minSample"+str(minSample)
         binList=makeBinList(fasta,clusters,binPrefix)
         printBinList(binList,minSample)
-        plotClusters(points,clusters,minSample)
+        #plotClusters(points,clusters,minSample)
 
 if __name__ == '__main__':
     main()
